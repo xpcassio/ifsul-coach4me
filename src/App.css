@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blueproject: #2f80ed;
+}
+
+#root {
+  @apply h-screen w-screen;
+}

@@ -5,5 +5,5 @@
 }
 
 #root {
-  @apply h-screen w-screen;
+  @apply h-screen w-screen bg-[#F0F0F7];
 }

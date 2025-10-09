@@ -1,15 +1,16 @@
-import Navigation from "./Navigation";
-
 type HeadingProps = {
   cor: string;
   className?: string;
   children?: React.ReactNode;
 };
 
-export default function Heading({ cor, className, children }: HeadingProps) {
+export default function Heading({
+  cor,
+  className = "",
+  children,
+}: HeadingProps) {
   return (
-    <div className={`w-screen min-h-[272px] bg-${cor} text-white ${className}`}>
-      <Navigation />
+    <div className={`w-screen min-h-[220px] bg-${cor} text-white ${className}`}>
       {children}
     </div>
   );

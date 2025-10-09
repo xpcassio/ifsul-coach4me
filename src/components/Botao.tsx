@@ -31,16 +31,18 @@ export default function Botao({
       {href ? (
         <a
           href={href}
-          className={`rounded px-[${varPx}] py-[${varPy}] text-white ${cor} ${className}`}
+          className={`flex items-center justify-center rounded text-white ${className}`}
+          style={{ backgroundColor: cor, padding: `${varPy} ${varPx}` }}
         >
-          {icon && <span>{icon}</span>}
+          {icon && <span className="mr-4">{icon}</span>}
           {texto}
         </a>
       ) : (
         <button
-          className={`rounded px-[${varPx}] py-[${varPy}] text-white ${cor} ${className}`}
+          className={`flex items-center gap-2 justify-center rounded text-white ${className}`}
+          style={{ backgroundColor: cor, padding: `${varPy} ${varPx}` }}
         >
-          {icon && <span>{icon}</span>}
+          {icon && <span className="mr-4">{icon}</span>}
           {texto}
         </button>
       )}

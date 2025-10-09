@@ -1,0 +1,7 @@
+.text-primary-lighter {
+  color: var(--color-primary-lighter);
+}
+
+.text-primary-light {
+  color: var(--color-primary-light);
+}

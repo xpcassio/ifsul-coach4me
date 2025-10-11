@@ -4,7 +4,8 @@ type BotaoProps = {
   href?: string;
   icon?: React.ReactNode;
   className?: string;
-  size?: "md" | "lg";
+  size?: "md" | "lg" | "custom";
+  onClick?: () => void;
 };
 
 export default function Botao({
@@ -14,6 +15,7 @@ export default function Botao({
   icon,
   className,
   size = "md",
+  onClick,
 }: BotaoProps) {
   let varPx: string;
   let varPy: string;
@@ -32,7 +34,11 @@ export default function Botao({
         <a
           href={href}
           className={`flex items-center justify-center rounded text-white ${className}`}
-          style={{ backgroundColor: cor, padding: `${varPy} ${varPx}` }}
+          style={{
+            backgroundColor: cor,
+            ...(size !== "custom" ? { padding: `${varPy} ${varPx}` } : {}),
+          }}
+          onClick={onClick}
         >
           {icon && <span className="mr-4">{icon}</span>}
           {texto}
@@ -40,7 +46,11 @@ export default function Botao({
       ) : (
         <button
           className={`flex items-center gap-2 justify-center rounded text-white ${className}`}
-          style={{ backgroundColor: cor, padding: `${varPy} ${varPx}` }}
+          style={{
+            backgroundColor: cor,
+            ...(size !== "custom" ? { padding: `${varPy} ${varPx}` } : {}),
+          }}
+          onClick={onClick}
         >
           {icon && <span className="mr-4">{icon}</span>}
           {texto}

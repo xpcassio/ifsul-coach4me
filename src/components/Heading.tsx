@@ -10,7 +10,10 @@ export default function Heading({
   children,
 }: HeadingProps) {
   return (
-    <div className={`w-screen min-h-[220px] bg-${cor} text-white ${className}`}>
+    <div
+      className={`w-full min-h-[220px] text-white ${className}`}
+      style={{ backgroundColor: cor }}
+    >
       {children}
     </div>
   );

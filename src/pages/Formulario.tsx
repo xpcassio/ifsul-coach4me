@@ -84,7 +84,7 @@ export default function Formulario() {
               <form className="space-y-6">
                 <div>
                   <label className="block font-medium mb-1">Matéria</label>
-                  <select className="w-full border border-gray-200 rounded-lg p-3 text-gray-600 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                  <select className="w-full border border-gray-200 rounded-lg p-3 min-h-[50px] text-gray-600 focus:ring-2 focus:ring-purple-500 focus:outline-none">
                     <option>Selecione qual você quer ensinar</option>
                   </select>
                 </div>
@@ -119,7 +119,7 @@ export default function Formulario() {
                   <label className="block font-medium mb-1">
                     Dia da semana
                   </label>
-                  <select className="w-full border border-gray-200 rounded-lg p-3 text-gray-600 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                  <select className="w-full border border-gray-200 rounded-lg p-3 min-h-[50px] text-gray-600 focus:ring-2 focus:ring-purple-500 focus:outline-none">
                     <option>Selecione o dia</option>
                   </select>
                 </div>

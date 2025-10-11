@@ -1,6 +1,7 @@
 type BotaoProps = {
   texto: string;
   cor?: string;
+  hover?: string;
   href?: string;
   icon?: React.ReactNode;
   className?: string;
@@ -11,6 +12,7 @@ type BotaoProps = {
 export default function Botao({
   texto,
   cor = "bg-blue-500",
+  hover,
   href,
   icon,
   className,
@@ -36,6 +38,7 @@ export default function Botao({
           className={`flex items-center justify-center rounded text-white ${className}`}
           style={{
             backgroundColor: cor,
+            ...(hover ? { hover: { backgroundColor: hover } } : {}),
             ...(size !== "custom" ? { padding: `${varPy} ${varPx}` } : {}),
           }}
           onClick={onClick}
@@ -45,9 +48,10 @@ export default function Botao({
         </a>
       ) : (
         <button
-          className={`flex items-center gap-2 justify-center rounded text-white ${className}`}
+          className={`flex items-center gap-2 justify-center rounded text-white cursor-pointer ${className}`}
           style={{
             backgroundColor: cor,
+            ...(hover ? { hover: { backgroundColor: hover } } : {}),
             ...(size !== "custom" ? { padding: `${varPy} ${varPx}` } : {}),
           }}
           onClick={onClick}

@@ -17,7 +17,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<Home />} />
-        <Route index path="/listagem" element={<Listagem />} />
+        <Route index path="/listagem/:id?" element={<Listagem />} />
         <Route index path="/formulario" element={<Formulario />} />
       </Routes>
     </BrowserRouter>

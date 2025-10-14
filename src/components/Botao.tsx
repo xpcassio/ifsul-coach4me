@@ -6,6 +6,7 @@ type BotaoProps = {
   icon?: React.ReactNode;
   className?: string;
   size?: "md" | "lg" | "custom";
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
 };
 
@@ -17,6 +18,7 @@ export default function Botao({
   icon,
   className,
   size = "md",
+  type = "button",
   onClick,
 }: BotaoProps) {
   let varPx: string;
@@ -43,7 +45,7 @@ export default function Botao({
           }}
           onClick={onClick}
         >
-          {icon && <span className="mr-4">{icon}</span>}
+          <span className={texto ?? "mr-4"}>{icon}</span>
           {texto}
         </a>
       ) : (
@@ -55,8 +57,9 @@ export default function Botao({
             ...(size !== "custom" ? { padding: `${varPy} ${varPx}` } : {}),
           }}
           onClick={onClick}
+          type={type}
         >
-          {icon && <span className="mr-4">{icon}</span>}
+          <span className={texto ?? "mr-4"}>{icon}</span>
           {texto}
         </button>
       )}

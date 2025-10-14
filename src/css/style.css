@@ -24,6 +24,10 @@
   --color-button-text: #ffffff;
   --color-box-base: #e3e2e2;
   --color-box-footer: #f1f1f2;
+  --color-red: #ef4444;
+  --color-red-dark: #dc2626;
+  --color-red-light: #f56565;
+  --color-red-darker: #b82525;
 }
 
 #root {

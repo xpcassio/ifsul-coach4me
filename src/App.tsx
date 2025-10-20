@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Formulario from "./pages/Formulario";
 import Listagem from "./pages/Listagem";
 import "./css/style.css";
+import Favoritos from "./pages/Favoritos";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ export default function App() {
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route index path="/listagem/:id?" element={<Listagem />} />
+        <Route index path="/favoritos" element={<Favoritos />} />
         <Route index path="/formulario" element={<Formulario />} />
       </Routes>
     </BrowserRouter>

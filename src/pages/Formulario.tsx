@@ -62,6 +62,28 @@ export default function Formulario() {
     { value: 7, label: "Domingo" },
   ];
 
+  const materias = [
+    { value: "matematica", label: "Matemática" },
+    { value: "portugues", label: "Português" },
+    { value: "fisica", label: "Física" },
+    { value: "quimica", label: "Química" },
+    { value: "biologia", label: "Biologia" },
+    { value: "geografia", label: "Geografia" },
+    { value: "historia", label: "História" },
+    { value: "ingles", label: "Inglês" },
+    { value: "espanhol", label: "Espanhol" },
+    { value: "informatica", label: "Informática" },
+    { value: "artes", label: "Artes" },
+    { value: "musica", label: "Música" },
+    { value: "educacao_fisica", label: "Educação Física" },
+    { value: "filosofia", label: "Filosofia" },
+    { value: "sociologia", label: "Sociologia" },
+    { value: "psicologia", label: "Psicologia" },
+    { value: "direito", label: "Direito" },
+    { value: "economia", label: "Economia" },
+    { value: "administracao", label: "Administração" },
+  ];
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       const response = await fetch("http://localhost:3001/classes", {
@@ -208,25 +230,11 @@ export default function Formulario() {
                     {...register("subject", { required: true })}
                   >
                     <option>Selecione qual você quer ensinar</option>
-                    <option value="matematica">Matemática</option>
-                    <option value="portugues">Português</option>
-                    <option value="fisica">Física</option>
-                    <option value="quimica">Química</option>
-                    <option value="biologia">Biologia</option>
-                    <option value="geografia">Geografia</option>
-                    <option value="historia">História</option>
-                    <option value="ingles">Inglês</option>
-                    <option value="espanhol">Espanhol</option>
-                    <option value="informatica">Informática</option>
-                    <option value="artes">Artes</option>
-                    <option value="musica">Música</option>
-                    <option value="educacao_fisica">Educação Física</option>
-                    <option value="filosofia">Filosofia</option>
-                    <option value="sociologia">Sociologia</option>
-                    <option value="psicologia">Psicologia</option>
-                    <option value="direito">Direito</option>
-                    <option value="economia">Economia</option>
-                    <option value="administracao">Administração</option>
+                    {materias.map((m) => (
+                      <option key={m.value} value={m.value}>
+                        {m.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 

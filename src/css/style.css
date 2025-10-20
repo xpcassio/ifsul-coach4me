@@ -30,6 +30,12 @@
   --color-red-darker: #b82525;
 }
 
+html,
+body,
 #root {
-  @apply h-full w-full bg-[#F0F0F7] pb-16;
+  @apply h-full w-full bg-[#F0F0F7];
+}
+
+#root {
+  @apply pb-16;
 }

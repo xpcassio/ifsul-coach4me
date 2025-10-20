@@ -1,4 +1,9 @@
-export const handleSaveFavorite = (coachId: number) => {
+export const allFavoriteLocalStorage = () => {
+  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  return favorites;
+};
+
+export const saveFavoriteLocalStorage = (coachId: number) => {
   const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
   if (!favorites.includes(coachId)) {
     favorites.push(coachId);
@@ -9,7 +14,7 @@ export const handleSaveFavorite = (coachId: number) => {
   }
 };
 
-export const handleRemoveFavorite = (coachId: number) => {
+export const removeFavoriteLocalStorage = (coachId: number) => {
   const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
   const index = favorites.indexOf(coachId);
   if (index > -1) {
@@ -21,7 +26,7 @@ export const handleRemoveFavorite = (coachId: number) => {
   }
 };
 
-export const isFavorite = (coachId: number): boolean => {
+export const isFavoriteLocalStorage = (coachId: number): boolean => {
   const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
   return favorites.includes(coachId);
 };
